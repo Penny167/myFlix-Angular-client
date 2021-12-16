@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 const apiUrl = 'https://intense-depths-38257.herokuapp.com/'; // Url for the heroku hosted api to which we will make our http requests
 

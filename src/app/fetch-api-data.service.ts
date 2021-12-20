@@ -22,11 +22,7 @@ export class FetchApiDataService {
 
   public loginUser(userDetails: any): Observable<any> { // Post request to log in a user. User does not receive token until logged in so no headers used.
     console.log(userDetails);
-    const response = this.http.post(apiUrl + 'login', userDetails);
-    return response.pipe(
-      map(this.extractResponseData), // Response here should be the logged in user + the token generated at login
-      catchError(this.handleError)
-    );
+    return this.http.post(apiUrl + 'login', userDetails).pipe(catchError(this.handleError));
   }
 
   public getUser(username: string): Observable<any> { // Get request to return user details

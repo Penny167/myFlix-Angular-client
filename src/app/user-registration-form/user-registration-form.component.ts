@@ -16,7 +16,8 @@ export class UserRegistrationFormComponent implements OnInit {
   constructor( // Passing these parameters sets them as properties on each instance of the class
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
-    public snackBar: MatSnackBar ) { }
+    public snackBar: MatSnackBar 
+  ) { }
 
   ngOnInit(): void { }
 

@@ -1,1 +1,7 @@
-<p>movie-card works!</p>
+<!-- The ngFor directive is used to loop through the movies array in the component -->
+<mat-card *ngFor="let movie of movies">
+  <mat-dialog-content>
+      <mat-card-title>{{movie.Title}}</mat-card-title>
+      <mat-card-subtitle><img src={{movie.ImagePath}}/></mat-card-subtitle>
+  </mat-dialog-content>
+</mat-card>

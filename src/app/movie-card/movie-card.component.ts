@@ -23,16 +23,25 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => { this.movies = resp });
   }
 
-  openGenreDialog(): void {
-    this.dialog.open(GenreComponent, { width: '280px' });
+  openGenreDialog(name: string, description: string): void {
+    this.dialog.open(GenreComponent, {
+      data: { name: name, description: description },
+      width: '280px' 
+    });
   } 
 
-  openDirectorDialog(): void {
-    this.dialog.open(DirectorComponent, { width: '280px' });
+  openDirectorDialog(name: string, bio: string, birth: string, death: string): void {
+    this.dialog.open(DirectorComponent, {
+      data: { name: name, bio: bio, birth: birth, death: death },
+      width: '280px' 
+    });
   }
 
-  openSynopsisDialog(): void {
-    this.dialog.open(SynopsisComponent, { width: '280px' });
+  openSynopsisDialog(description: string): void {
+    this.dialog.open(SynopsisComponent, {
+      data: { description: description },
+      width: '280px' 
+    });
   }
 
 }

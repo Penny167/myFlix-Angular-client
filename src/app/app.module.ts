@@ -20,6 +20,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { GenreComponent } from './genre/genre.component';
 import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { SynopsisComponent } from './synopsis/synopsis.component';
     WelcomePageComponent,
     GenreComponent,
     DirectorComponent,
-    SynopsisComponent
+    SynopsisComponent,
+    ProfileComponent,
+    EditProfileFormComponent
   ],
   imports: [
     BrowserModule,

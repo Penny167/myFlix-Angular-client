@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditProfileFormComponent } from '../edit-profile-form/edit-profile-form.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -12,9 +14,14 @@ import { EditProfileFormComponent } from '../edit-profile-form/edit-profile-form
 export class ProfileComponent implements OnInit {
 
   user: { } = { }; // Set user to an empty object
-  username = localStorage.getItem('user'); // Username needed to make request to getUser Api endpoint
+  username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
   
-  constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog) { }
+  constructor(
+    public fetchApiData: FetchApiDataService, 
+    public dialog: MatDialog,
+    public snackBar: MatSnackBar,
+    public router: Router
+  ) { }
 
   ngOnInit(): void { this.getProfile() } // We want the data to populate the template as soon as the component loads
 
@@ -24,6 +31,20 @@ export class ProfileComponent implements OnInit {
 
   openEditProfileFormDialog(): void {
     this.dialog.open(EditProfileFormComponent, { width: '280px' });
+  }
+
+  deleteProfile(): void {
+    this.fetchApiData.deleteUser(this.username!).subscribe((result) => {
+      localStorage.clear();
+      console.log(result);
+      this.snackBar.open('Your profile has been removed!', 'OK', { duration: 4000 });
+      this.router.navigate(['welcome']);
+     }, (result) => {
+       console.log(result);
+       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'OK', {
+         duration: 4000
+       });
+     });
   }
 
 }

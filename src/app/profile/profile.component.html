@@ -1,1 +1,14 @@
-<p>profile works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>myProfile</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>myUsername: {{user.Username}}</mat-card-content>
+  <mat-card-content>myPassword: {{user.Password}}</mat-card-content>
+  <mat-card-content>myEmail: {{user.Email}}</mat-card-content>
+  <mat-card-content>myBirthday: {{user.Birthday}}</mat-card-content>
+  <mat-card-actions>
+<!-- Event binding used to invoke the functions to open the edit profile dialog and delete the user respectively, when the buttons are clicked -->
+    <button mat-button (click)="openEditProfileFormDialog()" color="primary">Edit</button>
+    <button mat-button (click)="deleteProfile()" color="primary">Delete</button>
+  </mat-card-actions>
+</mat-card>

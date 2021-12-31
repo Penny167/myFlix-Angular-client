@@ -22,6 +22,7 @@ import { DirectorComponent } from './director/director.component';
 import { SynopsisComponent } from './synopsis/synopsis.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
+import { FavouritesComponent } from './favourites/favourites.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.
     DirectorComponent,
     SynopsisComponent,
     ProfileComponent,
-    EditProfileFormComponent
+    EditProfileFormComponent,
+    FavouritesComponent
   ],
   imports: [
     BrowserModule,

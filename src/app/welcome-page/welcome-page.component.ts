@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { ProfileComponent } from '../profile/profile.component';
+import { FavouritesComponent } from '../favourites/favourites.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -26,5 +27,10 @@ export class WelcomePageComponent implements OnInit {
   openProfileDialog(): void {
     this.dialog.open(ProfileComponent, { width: '500px' });
   }
-     
+
+  // This function opens the profile dialog when the profile button is clicked
+  openFavouritesDialog(): void {
+    this.dialog.open(FavouritesComponent, { width: '500px' });
+  }
+
 }

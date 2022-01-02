@@ -21,7 +21,7 @@ export class FavouritesComponent implements OnInit {
   ngOnInit(): void { this.getFavouriteMovies() }
 
   getFavouriteMovies(): void {
-    this.fetchApiData.getFavourites(this.username!).subscribe((resp: any) => { this.favourites = resp });
+    this.fetchApiData.getUser(this.username!).subscribe((resp: any) => { this.favourites = resp.FavouriteMovies });
   }
 
   openGenreDialog(name: string, description: string): void {

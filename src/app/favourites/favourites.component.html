@@ -11,7 +11,9 @@
         <button mat-button (click)="openGenreDialog(favourite.Genre.Name, favourite.Genre.Description)" color="primary">Genre</button>
         <button mat-button (click)="openDirectorDialog(favourite.Director.Name, favourite.Director.Bio, favourite.Director.Birth, favourite.Director.Death)" color="primary">Director</button>
         <button mat-button (click)="openSynopsisDialog(favourite.Description)" color="primary">Synopsis</button>
-        <mat-icon>favorite_border</mat-icon>
+        <button mat-icon-button (click)="deleteFavouriteMovie(favourite._id, favourite.Title)" color="warn" aria-label="icon button with a heart icon">
+          <mat-icon>favorite</mat-icon>
+        </button>
       </mat-card-actions>
   </mat-card>
 </div>

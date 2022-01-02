@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
 
-  user: { } = { }; // Set user to an empty object
+  user: any = { }; // Set user to an empty object
   username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
   
   constructor(

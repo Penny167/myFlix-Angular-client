@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { GenreComponent } from '../genre/genre.component';
 import { DirectorComponent } from '../director/director.component';
 import { SynopsisComponent } from '../synopsis/synopsis.component';
@@ -14,8 +15,10 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 export class MovieCardComponent implements OnInit {
   
   movies: any[] = [];
+  username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
+  favourites: any[] = []; // Set favourites equal to empty array
 
-  constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog) { }
+  constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog, public snackBar: MatSnackBar) { }
   
   ngOnInit(): void { this.getMovies() }
   
@@ -41,6 +44,18 @@ export class MovieCardComponent implements OnInit {
     this.dialog.open(SynopsisComponent, {
       data: { description: description },
       width: '280px' 
+    });
+  }
+
+  addMovieToFavourites(movieID: string, title: string): void {
+    this.fetchApiData.addFavourite(this.username!, movieID).subscribe((resp: any) => { 
+      this.favourites = resp;
+      this.snackBar.open(`${title} has been added to favourites!`, 'OK', { duration: 4000 });
+     }, (result) => {
+       console.log(result);
+       this.snackBar.open(`Hmm, we couldn't add ${title} to favourites. Please try again`, 'OK', {
+         duration: 4000
+       }); 
     });
   }
 

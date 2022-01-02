@@ -11,10 +11,7 @@
         <button mat-button (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)" color="primary">Genre</button>
         <button mat-button (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)" color="primary">Director</button>
         <button mat-button (click)="openSynopsisDialog(movie.Description)" color="primary">Synopsis</button>
-        <button mat-icon-button (click)="addMovieToFavourites(movie._id, movie.Title)" color="warn" aria-label="icon button with a heart icon">
-          <mat-icon>favorite_border</mat-icon>
-        </button>
-        <button mat-icon-button (click)="deleteMovieFromFavourites(movie._id, movie.Title)" color="warn" aria-label="icon button with a heart icon">
+        <button mat-icon-button (click)="toggleFavourite(movie._id, movie.Title)" color="warn" aria-label="icon button with a heart icon">
           <mat-icon>favorite</mat-icon>
         </button>
       </mat-card-actions>

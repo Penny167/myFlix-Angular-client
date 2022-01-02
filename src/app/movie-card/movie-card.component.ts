@@ -14,16 +14,33 @@ import { SynopsisComponent } from '../synopsis/synopsis.component';
 
 export class MovieCardComponent implements OnInit {
   
-  movies: any[] = [];
   username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
+  movies: any[] = [];
   favourites: any[] = []; // Set favourites equal to empty array
 
   constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog, public snackBar: MatSnackBar) { }
   
-  ngOnInit(): void { this.getMovies() }
-  
+  ngOnInit(): void { 
+    this.getMovies();
+    this.getFavouriteMovies();
+  }
+
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => { this.movies = resp });
+  }
+
+  getFavouriteMovies(): void {
+    this.fetchApiData.getUser(this.username!).subscribe((resp: any) => { this.favourites = resp.FavouriteMovies });
+  }
+
+  toggleFavourite(movieID: string, title: string): void {
+    let movieIds = this.favourites.map(favourite => { return favourite._id });
+    console.log(movieIds);
+    if (movieIds.includes(movieID)) {
+      this.deleteMovieFromFavourites(movieID, title);
+    } else {
+      this.addMovieToFavourites(movieID, title);
+    }
   }
 
   openGenreDialog(name: string, description: string): void {

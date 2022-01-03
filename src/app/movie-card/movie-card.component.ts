@@ -33,6 +33,11 @@ export class MovieCardComponent implements OnInit {
     this.fetchApiData.getUser(this.username!).subscribe((resp: any) => { this.favourites = resp.FavouriteMovies });
   }
 
+  toggleHeart(movieID: string): string {
+    let movieIds = this.favourites.map(favourite => { return favourite._id });
+    return movieIds.includes(movieID) ? 'warn' : 'primary';
+  }
+  
   toggleFavourite(movieID: string, title: string): void {
     let movieIds = this.favourites.map(favourite => { return favourite._id });
     console.log(movieIds);

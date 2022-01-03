@@ -12,6 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { FormsModule } from '@angular/forms';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -23,6 +24,7 @@ import { SynopsisComponent } from './synopsis/synopsis.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileFormComponent } from './edit-profile-form/edit-profile-form.component';
 import { FavouritesComponent } from './favourites/favourites.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
     SynopsisComponent,
     ProfileComponent,
     EditProfileFormComponent,
-    FavouritesComponent
+    FavouritesComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +54,8 @@ import { FavouritesComponent } from './favourites/favourites.component';
     MatInputModule,
     MatSnackBarModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

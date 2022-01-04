@@ -8,9 +8,9 @@
       <img src={{favourite.ImagePath}} alt={{favourite.Title}} />
       <mat-card-actions>
 <!-- Event binding used to invoke the functions to open the dialogs when the buttons are clicked. The data needed inside the dialogs is passed in as parameters to the functions -->
-        <button mat-button (click)="openGenreDialog(favourite.Genre.Name, favourite.Genre.Description)" color="primary">Genre</button>
-        <button mat-button (click)="openDirectorDialog(favourite.Director.Name, favourite.Director.Bio, favourite.Director.Birth, favourite.Director.Death)" color="primary">Director</button>
-        <button mat-button (click)="openSynopsisDialog(favourite.Description)" color="primary">Synopsis</button>
+        <button mat-button (click)="openGenreDialog(favourite.Genre.Name, favourite.Genre.Description)" color="accent">Genre</button>
+        <button mat-button (click)="openDirectorDialog(favourite.Director.Name, favourite.Director.Bio, favourite.Director.Birth, favourite.Director.Death)" color="accent">Director</button>
+        <button mat-button (click)="openSynopsisDialog(favourite.Description)" color="accent">Synopsis</button>
         <button mat-icon-button (click)="deleteFavouriteMovie(favourite._id, favourite.Title)" color="warn" aria-label="icon button with a heart icon">
           <mat-icon>favorite</mat-icon>
         </button>

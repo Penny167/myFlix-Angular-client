@@ -35,7 +35,7 @@ export class MovieCardComponent implements OnInit {
 
   toggleHeart(movieID: string): string {
     let movieIds = this.favourites.map(favourite => { return favourite._id });
-    return movieIds.includes(movieID) ? 'warn' : 'primary';
+    return movieIds.includes(movieID) ? 'warn' : 'accent';
   }
   
   toggleFavourite(movieID: string, title: string): void {

@@ -18,7 +18,15 @@
 mat-toolbar button {
   display: inline-block;
   margin: 0 10px;
-  color: white;
+  color: #E040FB;
   border: none;
-  background-color: #3F51B5;
+  background-color: #673AB7;
+}
+
+#logout {
+  color: #ff1744;
+}
+
+.title {
+  color: #ff1744;
 }

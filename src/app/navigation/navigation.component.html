@@ -20,12 +20,12 @@
         (click)="nav.toggle()">
         <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
       </button>
-      <span>myFlix</span>
+      <span class="title">myFlix</span>
       <span class="spacer"></span>
       <button (click)="changeComponentDisplayed('movies')">Movies</button>
       <button (click)="changeComponentDisplayed('profile')">myProfile</button>
       <button (click)="changeComponentDisplayed('favourites')">myFavourites</button>
-      <button>LogOut</button>
+      <button id="logout">LogOut</button>
     </mat-toolbar>
     <div [ngSwitch]="componentDisplayed">
       <app-movie-card *ngSwitchCase="'movies'"></app-movie-card>

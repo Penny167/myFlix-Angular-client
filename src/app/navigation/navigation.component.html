@@ -1,26 +1,36 @@
 <mat-sidenav-container class="sidenav-container">
 <!-- ref used for applying toggle method to open the sidenav when screen size is Handset-->
-  <mat-sidenav #nav class="sidenav" 
-    fixedInViewport="true" 
-    [attr.role]="isHandset ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
-    [opened]="!(isHandset | async)!.matches">
+  <mat-sidenav 
+    #nav 
+    class="sidenav"
+    [ngClass]="{hidden: !(isHandset | async)!.matches}" 
+    [mode]="'over'">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Movies</a>
-      <a mat-list-item href="#">myProfile</a>
-      <a mat-list-item href="#">myFavourites</a>
-      <a mat-list-item href="#">LogOut</a>
+      <button type="button" mat-list-item (click)="changeComponentDisplayed('movies')">Movies</button>
+      <button type="button" mat-list-item (click)="changeComponentDisplayed('profile')">myProfile</button>
+      <button type="button" mat-list-item (click)="changeComponentDisplayed('favourites')">myFavourites</button>
+      <button type="button" mat-list-item>LogOut</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button
-        (click)="nav.toggle()"
-        *ngIf="(isHandset | async)!.matches">
+        *ngIf="(isHandset | async)!.matches"
+        (click)="nav.toggle()">
         <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
       </button>
       <span>myFlix</span>
+      <span class="spacer"></span>
+      <button (click)="changeComponentDisplayed('movies')">Movies</button>
+      <button (click)="changeComponentDisplayed('profile')">myProfile</button>
+      <button (click)="changeComponentDisplayed('favourites')">myFavourites</button>
+      <button>LogOut</button>
     </mat-toolbar>
+    <div [ngSwitch]="componentDisplayed">
+      <app-movie-card *ngSwitchCase="'movies'"></app-movie-card>
+      <app-profile *ngSwitchCase="'profile'"></app-profile>
+      <app-favourites *ngSwitchCase="'favourites'"></app-favourites>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

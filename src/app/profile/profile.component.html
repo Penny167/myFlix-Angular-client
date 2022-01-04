@@ -5,7 +5,7 @@
   <mat-card-content>Username: {{user.Username}}</mat-card-content>
   <mat-card-content>Password: {{user.Password}}</mat-card-content>
   <mat-card-content>Email: {{user.Email}}</mat-card-content>
-  <mat-card-content>Birthday: {{user.Birthday}}</mat-card-content>
+  <mat-card-content>Birthday: {{user.Birthday | date}}</mat-card-content>
   <mat-card-actions>
 <!-- Event binding used to invoke the functions to open the edit profile dialog and delete the user respectively, when the buttons are clicked -->
     <button mat-button (click)="openEditProfileFormDialog()" color="primary">Edit</button>

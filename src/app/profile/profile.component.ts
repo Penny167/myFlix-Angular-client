@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
 
   user: any = { }; // Set user to an empty object
   username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
+  password = localStorage.getItem('password'); // We want to display an unhashed password to the user
   
   constructor(
     public fetchApiData: FetchApiDataService, 

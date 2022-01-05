@@ -1,16 +1,58 @@
-mat-card-title {
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.mat-card {
+  width: 200px;
+  margin: 20px; // To position the card in same place as first row of movie cards
+  height: 380px; // To use a height consistent with the movie cards
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+.mat-card-header {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70px;
+  margin-top: 50px;
+}
+
+.mat-card-title {
+  color: #E040FB;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.mat-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
   color: #E040FB;
 }
 
-mat-card-content {
-  color: white;
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180px;
+}
+
+.mat-card-content {
+  color: #E040FB;
 }
 
 span {
-  color: #E040FB;
+  color: #1DE9B6;
   font-weight: bold;
 }
 
-mat-card {
-  width: 250px;
+.mat-card-actions {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mat-raised-button {
+  color: #1DE9B6;
 }

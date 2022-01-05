@@ -17,10 +17,10 @@
 
 mat-toolbar button {
   display: inline-block;
-  margin: 0 10px;
   color: #E040FB;
-  border: none;
   background-color: #673AB7;
+  font-size: large;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 #logout {
@@ -28,5 +28,7 @@ mat-toolbar button {
 }
 
 .title {
-  color: #ff1744;
+  color: #E040FB;
+  font-size: x-large;
+  font-weight: bolder;
 }

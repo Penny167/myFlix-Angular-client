@@ -18,6 +18,7 @@ export class MovieCardComponent implements OnInit {
   movies: any[] = [];
   favourites: any[] = []; // Set favourites equal to empty array
 
+
   constructor(public fetchApiData: FetchApiDataService, public dialog: MatDialog, public snackBar: MatSnackBar) { }
   
   ngOnInit(): void { 
@@ -87,6 +88,15 @@ export class MovieCardComponent implements OnInit {
         console.log(result);
         this.snackBar.open(`Hmm, we couldn't unfavourite ${title}. Please try again`, 'OK', { duration: 4000 }); 
     });
+  }
+
+// This function is purely to adjust the font on one movie with a long title that is affecting the layout
+  fontSizer(movieTitle: string): number {
+    if (movieTitle === 'Lord of the Rings: The Fellowship of the Ring') {
+      return 16
+    } else {
+      return 18
+    }
   }
 
 }

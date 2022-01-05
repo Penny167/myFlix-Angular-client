@@ -58,4 +58,13 @@ export class FavouritesComponent implements OnInit {
     });
   }
 
+// This function is purely to adjust the font on one movie with a long title that is affecting the layout
+  fontSizer(favouriteTitle: string): number {
+    if (favouriteTitle === 'Lord of the Rings: The Fellowship of the Ring') {
+      return 16
+    } else {
+      return 18
+    }
+  }
+
 }

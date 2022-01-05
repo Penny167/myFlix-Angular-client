@@ -1,24 +1,3 @@
-.mat-card-title {
-  color: #E040FB;
-  font-size: 18px;
-  font-weight: normal;
-}
-
-.smallFont {
-  font-size: 16px;
-}
-
-.mat-card-header {
-  text-align: center;
-  height: 70px;
-}
-
-.mat-card-subtitle {
-  color: white;
-  text-align: center;
-  width: 175px
-}
-
 .movies-container {
   display: flex;
   flex-wrap: wrap;
@@ -30,6 +9,26 @@
 .mat-card {
   width: 200px;
   margin: 20px;
+}
+
+.mat-card-header {
+  text-align: center;
+  height: 70px;
+}
+
+.mat-card-title {
+  color: #E040FB;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.mat-card-subtitle {
+  color: white;
+  width: 175px
+}
+
+.mat-card img {
+  margin-left: 9px;
 }
 
 .mat-card-actions {
@@ -46,17 +45,14 @@
   padding: 0;
 }
 
+#director {
+  margin-right: 0;
+  margin-left: 16px;
+}
+
 .mat-icon-button {
   position: absolute;
   right: 0px;
   top: 0px;
 } 
 
-.mat-card img {
-  margin-left: 9px;
-}
-
-#director {
-  margin-right: 0;
-  margin-left: 16px;
-}

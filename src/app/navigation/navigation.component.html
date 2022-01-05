@@ -5,12 +5,20 @@
     class="sidenav"
     [ngClass]="{hidden: !(isHandset | async)!.matches}" 
     [mode]="'over'">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar id="mobile-menu" color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <button type="button" mat-list-item (click)="changeComponentDisplayed('movies')">Movies</button>
-      <button type="button" mat-list-item (click)="changeComponentDisplayed('profile')">myProfile</button>
-      <button type="button" mat-list-item (click)="changeComponentDisplayed('favourites')">myFavourites</button>
-      <button type="button" mat-list-item>LogOut</button>
+      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to navigate to movies" (click)="changeComponentDisplayed('movies')">
+        <mat-icon class="menu-icons" aria-label="Video camera icon">videocam</mat-icon>
+      </button>
+      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to navigate to profile" (click)="changeComponentDisplayed('profile')">
+        <mat-icon class="menu-icons" aria-label="Person icon">person</mat-icon>
+      </button>
+      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to navigate to favourite movies" (click)="changeComponentDisplayed('favourites')">
+        <mat-icon class="menu-icons" aria-label="Heart icon">favorite</mat-icon>
+      </button>
+      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to log out of myFlix">
+        <mat-icon class="menu-icons" aria-label="Logout icon">logout</mat-icon>
+      </button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

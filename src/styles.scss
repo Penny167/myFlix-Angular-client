@@ -3,7 +3,7 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
-$myFlix-Angular-client-primary: mat.define-palette(mat.$deep-purple-palette, 500);
+$myFlix-Angular-client-primary: mat.define-palette(mat.$deep-purple-palette, 600);
 $myFlix-Angular-client-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
 $myFlix-Angular-client-warn: mat.define-palette(mat.$red-palette, A400);
 $myFlix-Angular-client-theme: mat.define-dark-theme((

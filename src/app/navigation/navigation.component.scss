@@ -3,8 +3,8 @@
 }
 
 .sidenav {
-  width: 200px;
-  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  width: 175px;
+//  box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
 
 .hidden {
@@ -17,18 +17,31 @@
 
 mat-toolbar button {
   display: inline-block;
-  color: #E040FB;
-  background-color: #673AB7;
+  color: #1DE9B6;
+  background-color: #5e35b1;
   font-size: large;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 #logout {
-  color: #ff1744;
+  color: #1DE9B6;
 }
 
 .title {
   color: #E040FB;
   font-size: x-large;
-  font-weight: bolder;
+}
+
+#mobile-menu {
+  color: #1DE9B6;
+  font-size: 18px;
+}
+
+.menu-icons {
+  color: #1DE9B6;
+}
+
+.menu-buttons {
+  background-color: #E040FB;
+  border-width: thin;
 }

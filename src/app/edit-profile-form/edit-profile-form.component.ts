@@ -26,6 +26,7 @@ export class EditProfileFormComponent implements OnInit {
     this.fetchApiData.updateUser(this.username!, this.profileData).subscribe((result) => { // The exclamation mark after username removes the typescript error relating to the fact that username could be null
      this.dialogRef.close(); // Closes the dialog
      localStorage.setItem('user', result.user.Username); // We need to reset the username in case the user changed it when updating their profile because we use it to access some of the Api endpoints
+     localStorage.setItem('password', this.profileData.Password); // We want the unhashed password saved to local storage for the profile page so we need to reset this now in case the user changed their password
      console.log(result);
      this.snackBar.open('Your details have been updated!', 'OK', { duration: 4000 }); // Message pops up to confirm that profile has been updated successfully    
     }, (result) => {

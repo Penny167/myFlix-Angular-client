@@ -12,6 +12,16 @@
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
+.card-border {
+  background-color: #424242;
+  width: 275px;
+  height: 450px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  z-index: -1;
+}
+
 .mat-card-header {
   display: flex;
   justify-content: space-evenly;
@@ -35,8 +45,9 @@
 .content-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   height: 180px;
+  margin-left: 10px;
 }
 
 .mat-card-content {

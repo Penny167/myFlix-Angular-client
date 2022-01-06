@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog'; // Used to create a dialog in which another component can be nested
 
 @Component({
   selector: 'app-welcome-page',
@@ -13,11 +13,11 @@ export class WelcomePageComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
   ngOnInit(): void { }
-  // This function opens the registration dialog when the registration button is clicked  
+  // This function opens a dialog containing the user-registration-form  
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, { width: '280px' });
   }
-  // This function opens the login dialog when the login button is clicked
+  // This function opens a dialog containing the user-login-form
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, { width: '280px' });
   } 

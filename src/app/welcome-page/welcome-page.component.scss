@@ -1,0 +1,41 @@
+.mat-toolbar {
+  color: #E040FB;
+  font-size: x-large;
+}
+
+.mat-raised-button {
+  color: #1DE9B6;
+  width: 150px;
+  height: 50px;
+  font-size: medium;
+}
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 400px;
+}
+
+p {
+  color: #1DE9B6;
+  font-size: 17px;
+}
+
+h2 {
+  color: #1DE9B6;
+}
+
+.welcome-wrapper {
+  background-color: #212121;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.mat-icon {
+  font-size: 22px;
+  color: #E040FB;
+}

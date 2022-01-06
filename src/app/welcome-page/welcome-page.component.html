@@ -1,12 +1,19 @@
 <mat-toolbar color="primary">
-  <span>Welcome to myFlix!</span>
+  <span>myFlix</span>
 </mat-toolbar>
-<div class="main-page">
+<div class="welcome-wrapper">
+  <div class="main-page">
+    <h2>Welcome to myFlix</h2>
+    <p>Explore classic movies, find out more about directors and genres and save your favourites. 
+      Click register to sign up or login to return to myFlix! 
+      <mat-icon>movie</mat-icon><mat-icon>videocam</mat-icon><mat-icon>movie</mat-icon><mat-icon>videocam</mat-icon><mat-icon>movie</mat-icon>
+    </p>
 <!-- event binding used to invoke the respective functions in the app component when the buttons are clicked -->
-  <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 10px;" color="primary">
-    Register
-  </button>
-  <button mat-raised-button (click)="openUserLoginDialog()" style="margin-right: 10px;" color="primary">
-    Login
-  </button>
+    <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 10px;" color="primary">
+      Register
+    </button>
+    <button mat-raised-button (click)="openUserLoginDialog()" style="margin-right: 10px;" color="primary">
+      Login
+    </button>
+  </div>
 </div>

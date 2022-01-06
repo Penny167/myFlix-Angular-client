@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // We use the router here to route the user to the movies view on a successful login
 
 @Component({
   selector: 'app-user-login-form',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 
 export class UserLoginFormComponent implements OnInit {
-
+// loginData values will be populated by using the ngModel directive on form inputs in the user-login-form template
   loginData = { Username: '', Password: '' };
 
   constructor(
@@ -26,12 +26,14 @@ export class UserLoginFormComponent implements OnInit {
   userLogin(): void {
     this.fetchApiData.loginUser(this.loginData).subscribe((result) => {
      this.dialogRef.close();
-     localStorage.setItem('password', this.loginData.Password);
+// We set the localStorage password using the loginData because the password returned by the api
+// is hashed so will be nonsensical to the user when displayed in their profile
+     localStorage.setItem('password', this.loginData.Password); 
      localStorage.setItem('user', result.user.Username);
      localStorage.setItem('token', result.token);
      console.log(result);
-     this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Great!', { duration: 4000 });
-     this.router.navigate(['movies']);
+     this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Cool!', { duration: 4000 });
+     this.router.navigate(['movies']); // Navigate to the movies route
     }, (result) => {
       console.log(result);
       this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'Ok', {

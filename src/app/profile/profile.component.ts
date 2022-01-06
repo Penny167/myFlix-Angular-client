@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
 
 export class ProfileComponent implements OnInit {
 
-  user: any = { }; // Set user to an empty object
-  username = localStorage.getItem('user'); // Username needed to make requests to Api endpoints
-  password = localStorage.getItem('password'); // We want to display an unhashed password to the user
+  user: any = { }; // Create a user variable that is an empty object
+  username = localStorage.getItem('user'); // Username needed to make the requests to the Api endpoints
+  password = localStorage.getItem('password'); // We want to display an unhashed password to the user so we retrieve it from local storage
   
   constructor(
     public fetchApiData: FetchApiDataService, 
@@ -25,27 +25,31 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void { this.getProfile() } // We want the data to populate the template as soon as the component loads
-
+// Gets the user data and populates the user object
   getProfile(): void {
     this.fetchApiData.getUser(this.username!).subscribe((resp: any) => { this.user = resp });
   }
-
+// Opens a dialog to display the edit-profile-form component
   openEditProfileFormDialog(): void {
     this.dialog.open(EditProfileFormComponent, { width: '280px' });
   }
-
+// Deletes the user and redirects back to the welcome page
   deleteProfile(): void {
     this.fetchApiData.deleteUser(this.username!).subscribe((result) => {
       localStorage.clear(); // Clears the local storage so the deregistered user can no longer access protected routes
       console.log(result);
       this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000 });
-      this.router.navigate(['welcome']); // Navigates back to the welcome page so the user must re-register if they wish to continue to use the app
+      setTimeout(this.redirectToWelcome, 4000); // This ensures the transition to the welcome page is smooth with enough time for the snackbar to be displayed
      }, (result) => {
        console.log(result);
        this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'OK', {
          duration: 4000
        });
      });
+  }
+// Redirects the user to the welcome page after they have deregistered
+  redirectToWelcome(): void {
+    this.router.navigate(['welcome']); // Navigates back to the welcome page 
   }
 
 }

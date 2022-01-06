@@ -11,7 +11,7 @@ import { Router } from '@angular/router'; // We use the router here to route the
 })
 
 export class UserLoginFormComponent implements OnInit {
-// loginData values will be populated by using the ngModel directive on form inputs in the user-login-form template
+// loginData values will be populated by using the ngModel directive on the form inputs in the user-login-form template
   loginData = { Username: '', Password: '' };
 
   constructor(

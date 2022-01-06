@@ -52,21 +52,21 @@ export class MovieCardComponent implements OnInit {
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: { name: name, description: description },
-      width: '280px' 
+      width: '250px' 
     });
   } 
 
   openDirectorDialog(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(DirectorComponent, {
       data: { name: name, bio: bio, birth: birth, death: death },
-      width: '280px' 
+      width: '250px' 
     });
   }
 
-  openSynopsisDialog(description: string): void {
+  openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(SynopsisComponent, {
-      data: { description: description },
-      width: '280px' 
+      data: { title: title, description: description },
+      width: '250px' 
     });
   }
 

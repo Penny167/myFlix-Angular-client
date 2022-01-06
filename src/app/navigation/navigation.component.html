@@ -1,5 +1,5 @@
 <mat-sidenav-container class="sidenav-container">
-<!-- ref used for applying toggle method to open the sidenav when screen size is Handset-->
+<!-- ref used for applying toggle method to open the sidenav -->
   <mat-sidenav 
     #nav 
     class="sidenav"
@@ -16,7 +16,7 @@
       <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to navigate to favourite movies" (click)="changeComponentDisplayed('favourites')">
         <mat-icon class="menu-icons" aria-label="Heart icon">favorite</mat-icon>
       </button>
-      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to log out of myFlix">
+      <button type="button" class="menu-buttons" mat-list-item aria-label="Click button to log out of myFlix" (click)="logout()">
         <mat-icon class="menu-icons" aria-label="Logout icon">logout</mat-icon>
       </button>
     </mat-nav-list>
@@ -33,7 +33,7 @@
       <button *ngIf="!(isHandset | async)!.matches" mat-flat-button (click)="changeComponentDisplayed('movies')">Movies</button>
       <button *ngIf="!(isHandset | async)!.matches" mat-flat-button (click)="changeComponentDisplayed('profile')">myProfile</button>
       <button *ngIf="!(isHandset | async)!.matches" mat-flat-button (click)="changeComponentDisplayed('favourites')">myFavourites</button>
-      <button *ngIf="!(isHandset | async)!.matches" mat-flat-button id="logout">LogOut</button>
+      <button *ngIf="!(isHandset | async)!.matches" mat-flat-button id="logout" (click)="logout()">LogOut</button>
     </mat-toolbar>
     <div [ngSwitch]="componentDisplayed">
       <app-movie-card *ngSwitchCase="'movies'"></app-movie-card>

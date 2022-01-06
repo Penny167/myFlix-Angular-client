@@ -30,11 +30,11 @@ export class UserLoginFormComponent implements OnInit {
      localStorage.setItem('user', result.user.Username);
      localStorage.setItem('token', result.token);
      console.log(result);
-     this.snackBar.open(`Hi ${this.loginData.Username}! You're logged in`, 'Great!', { duration: 4000 });
+     this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Great!', { duration: 4000 });
      this.router.navigate(['movies']);
     }, (result) => {
       console.log(result);
-      this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'OK', {
+      this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'Ok', {
         duration: 4000
       });
     });

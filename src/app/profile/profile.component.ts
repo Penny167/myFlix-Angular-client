@@ -38,7 +38,7 @@ export class ProfileComponent implements OnInit {
     this.fetchApiData.deleteUser(this.username!).subscribe((result) => {
       localStorage.clear(); // Clears the local storage so the deregistered user can no longer access protected routes
       console.log(result);
-      this.snackBar.open('Your profile has been removed!', 'OK', { duration: 4000 });
+      this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000 });
       this.router.navigate(['welcome']); // Navigates back to the welcome page so the user must re-register if they wish to continue to use the app
      }, (result) => {
        console.log(result);

@@ -26,12 +26,12 @@ export class UserRegistrationFormComponent implements OnInit {
   // Logic for a successful user registration goes here
      this.dialogRef.close(); // Closes the dialog opened when the user clicks registration button in the app component
      console.log(result);
-     this.snackBar.open('Registration successful!', 'OK', { // Message pops up to confirm successful registration
+     this.snackBar.open(`Welcome to myFlix ${this.userData.Username}! Log in to start browsing movies`, 'Cool!', { // Message pops up to confirm successful registration
         duration: 4000
      });
     }, (result) => {
       console.log(result);
-      this.snackBar.open("Sorry we couldn't register you. Please try a different username", 'OK', {
+      this.snackBar.open("Sorry we couldn't register you. Please try a different username", 'Ok', {
         duration: 4000
       });
     });

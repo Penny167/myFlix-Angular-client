@@ -1,6 +1,6 @@
 .movies-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; // Allows the movies to display over multiple rows
   justify-content: center;
   margin-top: 50px;
   padding: 50px;
@@ -37,7 +37,7 @@
   height: 40px;
 }
 
-.mat-card-actions > * {
+.mat-card-actions > * { // Selects all the child elements and gives them equal space
   flex: 1;
 }
 
@@ -45,12 +45,12 @@
   padding: 0;
 }
 
-#director {
+#director { // This is needed as a small fix to get the director button loooking central
   margin-right: 0;
   margin-left: 16px;
 }
 
-.mat-icon-button {
+.mat-icon-button { // Places the heart icon in the top right-hand corner
   position: absolute;
   right: 0px;
   top: 0px;

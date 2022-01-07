@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { catchError, map } from 'rxjs/operators';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http'; // Used to make the Api requests
 import { Observable, throwError } from 'rxjs';
 
-const apiUrl = 'https://intense-depths-38257.herokuapp.com/'; // Url for the heroku hosted api to which we will make our http requests
+const apiUrl = 'https://intense-depths-38257.herokuapp.com/'; // Url for the heroku hosted Api to which we will make our http requests
 
 @Injectable({
   providedIn: 'root' // Indicates that this service will be provided to the root of app and hence available to all components
@@ -15,12 +15,12 @@ export class FetchApiDataService {
 
   public userRegistration(userDetails: any): Observable<any> { // Post request to register a new user
     console.log(userDetails);
-    return this.http.post(apiUrl + 'users', userDetails).pipe( // Post request to the user registration endpoint
+    return this.http.post(apiUrl + 'users', userDetails).pipe( 
     catchError(this.handleError)
     );
   }
 
-  public loginUser(userDetails: any): Observable<any> { // Post request to log in a user. User does not receive token until logged in so no headers used.
+  public loginUser(userDetails: any): Observable<any> { // Post request to log in a user. User does not receive token until logged in so no headers needed for this request.
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(catchError(this.handleError));
   }
@@ -52,42 +52,6 @@ export class FetchApiDataService {
   public getAllMovies(): Observable<any> { // Get request to return all movies
     const token = localStorage.getItem('token');
     const response = this.http.get(apiUrl + 'movies', { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
-    return response.pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
-
-  public getOneMovie(title: string): Observable<any> { // Get request to return a single movie with title provided
-    const token = localStorage.getItem('token');
-    const response = this.http.get(apiUrl + 'movies/' + title, { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
-    return response.pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
-
-  public getGenre(genreName: string): Observable<any> { // Get request to return a movie genre description for the genre provided
-    const token = localStorage.getItem('token');
-    const response = this.http.get(apiUrl + 'movies/genre/' + genreName, { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
-    return response.pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
-
-  public getDirector(directorName: string): Observable<any> { // Get request to return details about the director with the name provided
-    const token = localStorage.getItem('token');
-    const response = this.http.get(apiUrl + 'movies/director/' + directorName, { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
-    return response.pipe(
-      map(this.extractResponseData),
-      catchError(this.handleError)
-    );
-  }
-
-  public getFavourites(username: string): Observable<any> { // Get request to return user's favourites
-    const token = localStorage.getItem('token');
-    const response = this.http.get(apiUrl + 'users/' + username + '/favourites', { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
     return response.pipe(
       map(this.extractResponseData),
       catchError(this.handleError)

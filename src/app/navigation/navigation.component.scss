@@ -1,0 +1,42 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 175px;
+}
+
+.hidden {
+  display: none;
+}
+
+.spacer { // Styles the toolbar so that the title is to the left and the nav buttons are to the right
+  flex: 1 1 auto;
+}
+
+mat-toolbar button {
+  display: inline-block;
+  color: #1DE9B6;
+  background-color: #5e35b1;
+  font-size: large;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.title {
+  color: #E040FB;
+  font-size: x-large;
+}
+
+#mobile-menu {
+  color: #1DE9B6;
+  font-size: 18px;
+}
+
+.menu-icons {
+  color: #1DE9B6;
+}
+
+.menu-buttons {
+  background-color: #E040FB;
+  border-width: thin;
+}

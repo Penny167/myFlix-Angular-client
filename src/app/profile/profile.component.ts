@@ -39,17 +39,13 @@ export class ProfileComponent implements OnInit {
       localStorage.clear(); // Clears the local storage so the deregistered user can no longer access protected routes
       console.log(result);
       this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000 });
-      setTimeout(this.redirectToWelcome, 4000); // This ensures the transition to the welcome page is smooth with enough time for the snackbar to be displayed
+      this.router.navigate(['welcome']); // Navigates back to the welcome page
      }, (result) => {
        console.log(result);
-       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'OK', {
+       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'Ok', {
          duration: 4000
        });
      });
-  }
-// Redirects the user to the welcome page after they have deregistered
-  redirectToWelcome(): void {
-    this.router.navigate(['welcome']); // Navigates back to the welcome page 
   }
 
 }

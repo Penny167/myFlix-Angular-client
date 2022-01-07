@@ -78,7 +78,7 @@ export class MovieCardComponent implements OnInit {
   addMovieToFavourites(movieID: string, title: string): void {
     this.fetchApiData.addFavourite(this.username!, movieID).subscribe((resp: any) => { 
       this.favourites = resp;
-      this.snackBar.open(`${title} has been added to your favourites!`, 'Cool!', { duration: 4000 });
+      this.snackBar.open(`${title} has been added to your favourites!`, 'Cool', { duration: 4000 });
     },  (result) => {
         console.log(result);
         this.snackBar.open(`Hmm, we couldn't add ${title} to favourites. Please try again`, 'Ok', { duration: 4000 }); 

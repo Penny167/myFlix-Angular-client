@@ -4,14 +4,13 @@
 
 .sidenav {
   width: 175px;
-//  box-shadow: 3px 0 6px rgba(0,0,0,.24);
 }
 
 .hidden {
   display: none;
 }
 
-.spacer {
+.spacer { // Styles the toolbar so that the title is to the left and the nav buttons are to the right
   flex: 1 1 auto;
 }
 
@@ -21,10 +20,6 @@ mat-toolbar button {
   background-color: #5e35b1;
   font-size: large;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-#logout {
-  color: #1DE9B6;
 }
 
 .title {

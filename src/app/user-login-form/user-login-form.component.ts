@@ -32,13 +32,13 @@ export class UserLoginFormComponent implements OnInit {
      localStorage.setItem('user', result.user.Username);
      localStorage.setItem('token', result.token);
      console.log(result);
-     this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Cool!', { duration: 4000 });
+     this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Cool!', { duration: 4000, panelClass: 'snack-style' });
      this.router.navigate(['movies']); // Navigate to the movies route
     }, (result) => {
       console.log(result);
-      this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'Ok', {
-        duration: 4000
-      });
+      this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'Ok', 
+        { duration: 4000, panelClass: 'snack-style' }
+      );
     });
   }
 

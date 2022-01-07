@@ -37,11 +37,11 @@ export class ProfileComponent implements OnInit {
   deleteProfile(): void {
     this.fetchApiData.deleteUser(this.username!).subscribe(() => {
       localStorage.clear(); // Clears the local storage so the deregistered user can no longer access protected routes
-      this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000 });
+      this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000, panelClass: 'snack-style' });
       this.router.navigate(['welcome']); // Navigates back to the welcome page
     }, (result) => {
        console.log(result);
-       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'Ok', { duration: 4000 });
+       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'Ok', { duration: 4000, panelClass: 'snack-style' });
     });
   }
 

@@ -23,15 +23,15 @@ export class UserRegistrationFormComponent implements OnInit {
 
   registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => { // invokes the userRegistration function in our Api service, passing the userData
-     this.dialogRef.close(); // Closes the dialog opened in the welcome-page component component
-     this.snackBar.open(`Welcome to myFlix ${this.userData.Username}! Log in to start browsing movies.`, 'Cool!', { // Message pops up to confirm successful registration
-        duration: 4000
-     });
+      this.dialogRef.close(); // Closes the dialog opened in the welcome-page component component
+      this.snackBar.open(`Welcome to myFlix ${this.userData.Username}! Log in to start browsing movies.`, 'Cool!', // Message pops up to confirm successful registration
+        { duration: 4000, panelClass: 'snack-style' }
+      );
     }, (result) => {
       console.log(result);
-      this.snackBar.open("Sorry we couldn't register you. Please try a different username", 'Ok', {
-        duration: 4000
-      });
+      this.snackBar.open("Sorry we couldn't register you. Please try a different username", 'Ok',
+        { duration: 4000, panelClass: 'snack-style' }
+      );
     });
   }
 

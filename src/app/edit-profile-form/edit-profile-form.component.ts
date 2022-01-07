@@ -29,7 +29,7 @@ export class EditProfileFormComponent implements OnInit {
      this.dialogRef.close(); // Closes the dialog
      localStorage.setItem('user', this.profileData.Username); // We need to reset the username in case the user changed it when updating their profile because we use it to access some of the Api endpoints
      localStorage.setItem('password', this.profileData.Password); // We want the unhashed password saved to local storage for the profile page so we need to reset this now in case the user changed their password
-     this.snackBar.open('Your details have been updated!', 'Cool!', { duration: 4000 }); // Message pops up to confirm that profile has been updated successfully
+     this.snackBar.open('Your details have been updated!', 'Cool!', { duration: 4000, panelClass: 'snack-style' }); // Message pops up to confirm that profile has been updated successfully
      setTimeout(this.redirectToMovies, 4000); // This ensures the transition back to the movies view is smooth with enough time for the snackbar to be displayed
     }, (result) => {
       console.log(result);

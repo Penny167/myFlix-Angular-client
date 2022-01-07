@@ -45,7 +45,9 @@ export class FetchApiDataService {
 
   public deleteUser(username: string): Observable<any> { // Delete request to deregister user
     const token = localStorage.getItem('token');
-    const response = this.http.delete(apiUrl + 'users/' + username, { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, })});
+    const response = this.http.delete(apiUrl + 'users/' + username, 
+      { headers: new HttpHeaders({ Authorization: 'Bearer ' + token, }), responseType: 'text' }
+    );
     return response.pipe(catchError(this.handleError));
   }
 

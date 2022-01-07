@@ -35,17 +35,14 @@ export class ProfileComponent implements OnInit {
   }
 // Deletes the user and redirects back to the welcome page
   deleteProfile(): void {
-    this.fetchApiData.deleteUser(this.username!).subscribe((result) => {
+    this.fetchApiData.deleteUser(this.username!).subscribe(() => {
       localStorage.clear(); // Clears the local storage so the deregistered user can no longer access protected routes
-      console.log(result);
       this.snackBar.open('Your profile has been removed!', 'X', { duration: 4000 });
       this.router.navigate(['welcome']); // Navigates back to the welcome page
-     }, (result) => {
+    }, (result) => {
        console.log(result);
-       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'Ok', {
-         duration: 4000
-       });
-     });
+       this.snackBar.open("Hmm, we couldn't delete your profile. Please try again", 'Ok', { duration: 4000 });
+    });
   }
 
 }

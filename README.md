@@ -2,7 +2,9 @@
 
 MyFlixAngularClient is a dynamic web application that allows users to explore classic movies. It consumes the myFlix API with a front end built using Angular. The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
 
-## [Link to live website] (https://penny167.github.io/myFlix-Angular-client/welcome)
+## Live Demo
+
+[Link to live website](https://penny167.github.io/myFlix-Angular-client/welcome)
 
 ## App overview
 

@@ -30,7 +30,7 @@ export class NavigationComponent implements OnInit {
 // Logs out the user
   logout(): void {
     localStorage.clear(); // Clears the local storage so the logged out user can no longer use protected routes
-    this.snackBar.open("You've been logged out. Goodbye!", 'X', { duration: 4000 });
+    this.snackBar.open("You've been logged out. Goodbye!", 'X', { duration: 4000, panelClass: 'snack-style' });
     this.router.navigate(['welcome']); // Navigates back to the welcome page so the user must log in again if they wish to continue to use the app   
   }
 

@@ -22,3 +22,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background: #5e35b1;
   color: #1DE9B6;
 }
+// Used to style the tooltips so that they are consistent with the theme colours
+.mat-tooltip {
+  background-color: #5e35b1;
+  &.validation {
+    color: #1DE9B6;
+  }
+}

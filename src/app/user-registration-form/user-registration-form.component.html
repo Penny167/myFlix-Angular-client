@@ -6,13 +6,19 @@
     <form>
       <mat-form-field>
 <!-- ngModel directive used to bind the form input values entered by the user to the userData object in the registration component -->
-        <input matInput [(ngModel)]="userData.Username" type="text" placeholder="Username" name="Username" required>
+        <input matInput [(ngModel)]="userData.Username" type="text" placeholder="Username" name="Username" required
+          matTooltip="Minimum 5 characters alphanumeric" matTooltipClass="validation"
+          aria-label="Input for username with tooltip that displays validation requirements">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="userData.Password" type = "password" placeholder="Password" name="Password" required>
+        <input matInput [(ngModel)]="userData.Password" type = "password" placeholder="Password" name="Password" required
+          matTooltip="Minimum 8 characters" matTooltipClass="validation"
+          aria-label="Input for password with tooltip that displays validation requirements">
       </mat-form-field>
       <mat-form-field>
-        <input matInput [(ngModel)]="userData.Email" type = "email" placeholder="Email" name="Email" required>
+        <input matInput [(ngModel)]="userData.Email" type = "email" placeholder="Email" name="Email" required
+          matTooltip="Must be valid email address" matTooltipClass="validation"
+          aria-label="Input for email with tooltip that displays validation requirements">
       </mat-form-field>
       <mat-form-field>
         <input matInput [(ngModel)]="userData.Birthday" type = "date" placeholder="Birthday" name="Birthday">

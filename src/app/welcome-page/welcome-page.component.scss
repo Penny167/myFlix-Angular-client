@@ -26,7 +26,8 @@
 }
 
 .mat-card {
-  position: relative;      // Ensures the card moves with the border when the screen size changes
+  // Ensures the card moves with the border when the screen size changes
+  position: relative;      
   top: 25px;
   left: 25px;
   width: 240px;
@@ -44,7 +45,8 @@
   height: 40px;
   margin-bottom: 20px;
   text-align: center;
-  line-height: 30px;      // To prevent the text being squashed in the space
+  // To prevent the text being squashed in the space
+  line-height: 30px;       
 }
 
 .mat-card-title {

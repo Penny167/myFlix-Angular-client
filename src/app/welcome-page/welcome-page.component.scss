@@ -1,31 +1,32 @@
-.mat-toolbar { // Sits outside the welcome-wrapper so it does not become a flex item
+// Sits outside the welcome-wrapper so it does not become a flex item
+.mat-toolbar { 
   color: #E040FB; 
+  position: fixed;
 }
 
 #logo {
   font-size: x-large;
 }
-
-.welcome-wrapper { // Places the main-page container in the center and fills the background space
-  background-color: #212121;
+// Places the card border in the center and fills the background space
+.welcome-wrapper { 
   height: 100%;
   display: flex;
   justify-content: center;
-  padding-top: 100px;
+  background-color: #212121;
   background-image: url('/../assets/jason-dent-SnXIF8_2oPw-unsplash.jpg');
-  background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-
-.card-border { // This improves the appearance of the component on the page, making it look similar to the dialogs that include forms
+// Provides an appearance consistent with other components and forms
+.card-border { 
+  margin-top: 150px;
   background-color: #424242;
   width: 325px;
   height: 410px;
 }
 
 .mat-card {
-  position: relative; // Ensures the card moves with the border when the screen size changes
+  position: relative;      // Ensures the card moves with the border when the screen size changes
   top: 25px;
   left: 25px;
   width: 240px;
@@ -33,7 +34,7 @@
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   color: #E040FB;
 }
-
+// An adjustment made to the default mat-card styles to improve the spacing
 .mat-card>:first-child, 
 .mat-card-content>:first-child {
   margin-top: 20px;
@@ -41,22 +42,17 @@
 
 .mat-card-header {
   height: 40px;
-  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  line-height: 30px;
+  line-height: 30px;      // To prevent the text being squashed in the space
 }
 
 .mat-card-title {
   font-size: 25px;
-  font-weight: 500;
-  height: 30px;
 }
 
 .content-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   height: 170px;
 }
 

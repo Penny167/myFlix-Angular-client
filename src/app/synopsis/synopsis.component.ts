@@ -14,7 +14,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class SynopsisComponent implements OnInit {
   /**
-   * The data that was passed to the Synopsis dialog in the MovieCardComponent is injected to the 
+   * The data that was passed to the Synopsis dialog in the MovieCardComponent is injected in to the 
    * constructor using the MAT_DIALOG_DATA injection token. The data becomes a property on the class
    * and is hence available to be output in the template.
   */ 

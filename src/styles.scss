@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 @use '@angular/material' as mat;
 @include mat.core();
+
 // Defines the palettes for my theme using the Material Design palettes available in palette.scss
 $myFlix-Angular-client-primary: mat.define-palette(mat.$deep-purple-palette, 600);
 $myFlix-Angular-client-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
@@ -12,16 +13,20 @@ $myFlix-Angular-client-theme: mat.define-dark-theme((
     warn: $myFlix-Angular-client-warn,
   )
 ));
+
 // Include theme styles for core and each component used in the app
 @include mat.all-component-themes($myFlix-Angular-client-theme);
+
 // Global styles
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 // Used to style the snackbar popups so that they are consistent with the theme colours
 .snack-style {
   background: #5e35b1;
   color: #1DE9B6;
 }
+
 // Used to style the tooltips so that they are consistent with the theme colours
 .mat-tooltip {
   background-color: #5e35b1;

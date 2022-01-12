@@ -12,6 +12,10 @@
   display: flex;
   justify-content: center;
   padding-top: 100px;
+  background-image: url('/../assets/jason-dent-SnXIF8_2oPw-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
 .card-border { // This improves the appearance of the component on the page, making it look similar to the dialogs that include forms
@@ -58,7 +62,7 @@
 
 .mat-card-content {
   color: #1DE9B6;
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   margin-top: 40px;
 }

@@ -24,7 +24,7 @@
 <!-- The ngIf directive is used to conditionally render the sidenav menu button in the toolbar at mobile screen sizes and nav items for other screen sizes -->
 <!-- The ngSwitch directive is then used to determine which component to display in the view based on the nav item selected by the user -->
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar id="main-toolbar" color="primary">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button
         *ngIf="(isHandset | async)!.matches"
         (click)="nav.toggle()">
@@ -37,7 +37,7 @@
       <button *ngIf="!(isHandset | async)!.matches" mat-flat-button (click)="changeComponentDisplayed('favourites')">myFavourites</button>
       <button *ngIf="!(isHandset | async)!.matches" mat-flat-button id="logout" (click)="logout()">LogOut</button>
     </mat-toolbar>
-    <div [ngSwitch]="componentDisplayed">
+    <div [ngSwitch]="componentDisplayed" class="content">
       <app-movie-card *ngSwitchCase="'movies'"></app-movie-card>
       <app-profile *ngSwitchCase="'profile'"></app-profile>
       <app-favourites *ngSwitchCase="'favourites'"></app-favourites>

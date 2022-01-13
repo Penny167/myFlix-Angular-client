@@ -5,7 +5,8 @@
   <mat-card-content>
     <form>
       <mat-form-field>
-<!-- ngModel directive used to bind the form input values entered by the user to the userData object in the registration component -->
+<!-- ngModel directive used to bind the form input values entered by the user to the userData object in 
+  the registration component. Tooltips display the validation requirements -->
         <input matInput [(ngModel)]="userData.Username" type="text" placeholder="Username" name="Username" required
           matTooltip="Minimum 5 characters alphanumeric" matTooltipClass="validation"
           aria-label="Input for username with tooltip that displays validation requirements">

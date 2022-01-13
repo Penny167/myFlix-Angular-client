@@ -7,25 +7,29 @@
 
 .mat-card {
   width: 240px;
-  margin: 20px; // To position the card in same place as the first row of movie cards
-  height: 325px; // To use a height consistent with the movie cards
+  // To position the card in same place as the first row of movie cards
+  margin: 20px;
+  // To use a height similar to the movie cards for a consistent appearance 
+  height: 325px; 
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   padding-right: 0px;
   color: #E040FB;
 }
 
-.card-border { // This improves the appearance of the component on the page, making it look similar to the dialogs that include forms
+// Provides an appearance consistent with other components and forms
+.card-border { 
   background-color: #424242;
   width: 300px;
   height: 400px;
-  position: absolute; // Ensures the card-border moves with the mat-card when the screen size changes
+  // Ensures the card-border moves with the mat-card when the screen size changes
+  position: absolute; 
   top: -20px;
   left: -20px;
-  z-index: -1; // The border needs to sit underneath the card so that it does not obscure the content
+  // The border needs to sit underneath the card so that it does not obscure the content
+  z-index: -1; 
 }
 
 .mat-card-header {
-  display: flex;
   justify-content: center;
   height: 40px;
   margin-top: 40px;
@@ -34,12 +38,12 @@
 
 .mat-card-title {
   font-size: x-large;
-  font-weight: 500;
   padding-right: 20px;
 }
 
 .mat-icon {
-  position: absolute; // Allows us to position the icon in the top right corner
+  // Positions the icon relative to the mat-card
+  position: absolute; 
   top: 15px;
   right: 15px;
 }
@@ -47,6 +51,7 @@
 .content-container {
   display: flex;
   flex-direction: column;
+  // Long field names will wrap rather than overspill the container
   flex-wrap: wrap;
   height: 170px;
   margin-left: 10px;
@@ -64,4 +69,6 @@ span {
 
 .mat-raised-button {
   color: #1DE9B6;
+  width: 80px;
+  font-size: 15px;
 }

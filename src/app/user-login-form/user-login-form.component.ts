@@ -1,12 +1,12 @@
 /** 
  * The UserLoginFormComponent is used to render a mat dialog containing a form where the
- * user can submit their credentials to log in to myFlix
+ * user can submit their credentials to log in to myFlix.
  * @module UserLoginFormComponent
  */
 
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-// Used to acces the loginUser function created on this service
+// Used to access the loginUser function created on this service
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 // Used to navigate the user to the movies route on a successful login
@@ -35,7 +35,7 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void { }
 
   /**
-   * Invokes the loginUser function on the fetchApiData service, with the loginData from the form,
+   * Invokes the loginUser method on the fetchApiData service, with the loginData from the form,
    * in order to log in the user. A successful login closes the form and navigates the user to the
    * movies route. A popup is displayed confirming login success. If unsuccessful, a popup message
    * asks the user to check their username and password.
@@ -44,17 +44,17 @@ export class UserLoginFormComponent implements OnInit {
     this.fetchApiData.loginUser(this.loginData).subscribe((result) => {
      this.dialogRef.close();
      /**
-      * The user's username and token returned from the database are stored in local storage so
-      * they can be used for subsequent requests made to fetch movies, their profile etc. Password
+      * The user's username and token returned from the database are stored in local storage so that 
+      * they can be used for subsequent requests to fetch movies, get a user's profile etc. Password
       * is set using the loginData so that an unhashed version can be used when displaying the user's
-      * profile in the profile view.
+      * profile in the profile view (the database returns the hashed version).
       */
      localStorage.setItem('password', this.loginData.Password); 
      localStorage.setItem('user', result.user.Username);
      localStorage.setItem('token', result.token);
      console.log(result);
      this.snackBar.open(`Hi ${this.loginData.Username}. You're logged in to myFlix!`, 'Cool!', { duration: 4000, panelClass: 'snack-style' });
-     this.router.navigate(['movies']); // Navigate to the movies route
+     this.router.navigate(['movies']); // Navigates to the movies route
     }, (result) => {
       console.log(result);
       this.snackBar.open(`Sorry ${this.loginData.Username} we couldn't log you in. Please check your username and password`, 'Ok', 

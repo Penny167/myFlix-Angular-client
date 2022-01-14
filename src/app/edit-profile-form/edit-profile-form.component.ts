@@ -1,8 +1,14 @@
+/** 
+ * The EditProfileFormComponent is used to render a mat dialog containing a form where the
+ * user can edit their profile details. 
+ * @module EditProfileFormComponent
+ */
+
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog'; // Used to create a reference to the dialog that we opened in the profile component so we can close it when the edit profile form has been successfully submitted
+import { MatDialogRef } from '@angular/material/dialog';
+// Used to access the updateUser function created on this service
 import { FetchApiDataService } from '../fetch-api-data.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-profile-form',
@@ -11,26 +17,47 @@ import { Router } from '@angular/router';
 })
 
 export class EditProfileFormComponent implements OnInit {
-// profileData values will be populated by using the ngModel directive on the form inputs in the edit-profile-form template
+  /** 
+   * profileData values are populated by form inputs in the edit-profile-form template that are bound 
+   * using the ngModel directive.
+   */ 
   profileData = { Username: '', Password: '', Email: '', Birthday: '' };
-  username = localStorage.getItem('user'); // Needed to access the Api endpoint for updating a user
+  username = localStorage.getItem('user');
 
   constructor(
     public fetchApiData: FetchApiDataService,
     public dialogRef: MatDialogRef<EditProfileFormComponent>,
-    public snackBar: MatSnackBar,
-    public router: Router 
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void { }
 
+  /**
+   * Invokes the updateUser method on the fetchApiData service, with the profileData from the form,
+   * in order to update the user's details. A successful update closes the form and navigates the user
+   * to the movies view. A popup is displayed confirming update success. If unsuccessful, a popup message
+   * asks the user to check the form fields and try again.
+   */
   updateProfile(): void {
-    this.fetchApiData.updateUser(this.username!, this.profileData).subscribe((result) => { // The exclamation mark after username removes the typescript error relating to the fact that username could be null
+    // The exclamation mark after username tells TypeScript that username will not be null to avoid a compilation error
+    this.fetchApiData.updateUser(this.username!, this.profileData).subscribe((result) => { 
      this.dialogRef.close(); // Closes the dialog
-     localStorage.setItem('user', this.profileData.Username); // We need to reset the username in case the user changed it when updating their profile because we use it to access some of the Api endpoints
-     localStorage.setItem('password', this.profileData.Password); // We want the unhashed password saved to local storage for the profile page so we need to reset this now in case the user changed their password
-     this.snackBar.open('Your details have been updated!', 'Cool!', { duration: 4000, panelClass: 'snack-style' }); // Message pops up to confirm that profile has been updated successfully
-     setTimeout(this.redirectToMovies, 4000); // This ensures the transition back to the movies view is smooth with enough time for the snackbar to be displayed
+     /**
+      * We need to reset the username in local storage in case the user changed it when updating their profile 
+      * because the new username will be needed for any subsequent requests to Api endpoints.
+      */ 
+     localStorage.setItem('user', this.profileData.Username);
+     /**
+      * We reset the password in local storage in case the user changed their password because the new
+      * password will be needed to display an unhashed version in the profile view.
+      */ 
+     localStorage.setItem('password', this.profileData.Password); 
+     this.snackBar.open('Your details have been updated!', 'Cool!', { duration: 4000, panelClass: 'snack-style' });
+     /**
+      * The redirectToMovies method forces the page to reopen, so a timeout is set to ensure that the snackbar
+      * message has time to be displayed before this takes place.
+      */
+     setTimeout(this.redirectToMovies, 4000); 
     }, (result) => {
       console.log(result);
       this.snackBar.open("Sorry, the update didn't work. Please check you've completed all the fields and try again", 'Ok', {
@@ -38,9 +65,16 @@ export class EditProfileFormComponent implements OnInit {
       });
     });
   }
-// Redirects the user to the movies view after they have updated their profile
+
+  /**
+   * After the user has updated their profile, their old profile will continue to be displayed until the
+   * next time that the profile component is loaded. We therefore take the user back to the movies view.
+   * Because the movies view and profile view are both inside the navigation component that is currently
+   * set to display the profile view, we need to refresh the page to return to the default view of the 
+   * navigation component, which will display the movie view that we want to see.
+   */
   redirectToMovies(): void {
-    window.open('/movies', '_self'); // We need to refresh the page to get the default navigation route that contains the movie view
+    window.open('/movies', '_self');
   }
 
 }

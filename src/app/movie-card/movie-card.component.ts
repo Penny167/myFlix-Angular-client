@@ -55,18 +55,18 @@ export class MovieCardComponent implements OnInit {
 
   /** 
    * Invokes the getUser method on the fetchApiData service and populates the favourites array with
-   * the favouriteMovies property on the response, which is an array of favourite movie ids. 
+   * the favouriteMovies property on the response, which is an array of the user's favourite movies. 
    */
   getFavouriteMovies(): void {
     this.fetchApiData.getUser(this.username!).subscribe((resp: any) => { this.favourites = resp.FavouriteMovies });
   }
 
   /** 
-   * Checks to see if a movie id is included within the favourites array and returns a specified
-   * theme colour value depending on whether the result is true or false. 
+   * Extracts the IDs of the user's favourite movies and checks to see if the movie selected is 
+   * included. Returns a specified theme colour value depending on whether the result is true or false. 
    * @param movieID ID of the movie selected.
-   * @returns String value for the color used to style the mat-icon-button in the template that
-   * contains the heart icon.
+   * @returns String value for the colour used to style the mat-icon-button in the template that
+   * renders the heart icon on the movie's mat card.
    */ 
   toggleHeart(movieID: string): string {
     let movieIds = this.favourites.map(favourite => { return favourite._id });
@@ -74,8 +74,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Checks to see if a movie is included within the favourites array. If included, calls the 
-   * deleteMovieFromFavourites method; if not included, calls the addMovieToFavourites method.
+   * Extracts the IDs of the user's favourite movies and checks to see if the movie selected is 
+   * included. If included, calls the deleteMovieFromFavourites method; if not included, calls
+   * the addMovieToFavourites method.
    * @param movieID ID of the movie selected.
    * @param title Title of the movie.
    */
@@ -131,7 +132,7 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Invokes the addFavourite method on the fetchApiData service, to add the movie to the user's
-   * favourites. If successful a popup is displayed confirming that the movie has been added. If 
+   * favourites. If successful, a popup is displayed confirming that the movie has been added. If 
    * unsuccessful, a popup message asks the user to try again.
    * @param movieID ID of the movie selected.
    * @param title Title of the movie selected.
@@ -152,7 +153,7 @@ export class MovieCardComponent implements OnInit {
 
   /**
    * Invokes the deleteFavourite method on the fetchApiData service, to delete the movie from 
-   * the user's favourites. If successful a popup is displayed confirming that the movie has been
+   * the user's favourites. If successful, a popup is displayed confirming that the movie has been
    * removed. If unsuccessful, a popup message asks the user to try again.
    * @param movieID 
    * @param title 

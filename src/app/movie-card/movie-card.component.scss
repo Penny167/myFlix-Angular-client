@@ -1,6 +1,7 @@
 .movies-container {
   display: flex;
-  flex-wrap: wrap; // Allows the movies to display over multiple rows
+  // Allows the movies to display over multiple rows
+  flex-wrap: wrap; 
   justify-content: center;
   margin-top: 50px;
   padding: 100px;
@@ -13,6 +14,7 @@
 
 .mat-card-header {
   text-align: center;
+  // Makes room for the longer movie titles so that the card images for all of the movies line up
   height: 70px;
 }
 
@@ -37,7 +39,8 @@
   height: 40px;
 }
 
-.mat-card-actions > * { // Selects all the child elements and gives them equal space
+// Selects all the child elements and gives them equal space
+.mat-card-actions > * { 
   flex: 1;
 }
 
@@ -45,12 +48,14 @@
   padding: 0;
 }
 
-#director { // This is needed as a small fix to get the director button loooking central
+// This is needed as a small fix to get the director button loooking central
+#director { 
   margin-right: 0;
   margin-left: 16px;
 }
 
-.mat-icon-button { // Places the heart icon in the top right-hand corner
+// Places the heart icon in the top right-hand corner
+.mat-icon-button { 
   position: absolute;
   right: 0px;
   top: 0px;

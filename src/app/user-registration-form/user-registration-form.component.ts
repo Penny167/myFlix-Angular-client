@@ -19,6 +19,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 
 export class UserRegistrationFormComponent implements OnInit {
+  
   /** 
    * userData values are populated by form inputs in the user-registration-form template that are 
    * bound using the ngModel directive.

@@ -1,6 +1,15 @@
+/**
+ * The AppModule is used to import then declare all of the components that will be used in the app, 
+ * as well as to import all of the modules that will be used. The AppComponent is bootstrapped when the
+ * module is bootstrapped, and thereby gets access to the module contents. By virtue of being children of
+ * the AppComponent (which is the root component), all the other components get access to exported 
+ * declarables of the imported modules too, as well as to the other child components.
+ * @module AppModule
+ */
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Import module to allow client to make http requests to the API/server
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -46,7 +55,7 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule, // Add http module to imports
+    HttpClientModule, 
     AppRoutingModule, 
     BrowserAnimationsModule,
     FormsModule,
@@ -66,4 +75,5 @@ import { NavigationComponent } from './navigation/navigation.component';
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

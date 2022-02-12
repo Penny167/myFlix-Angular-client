@@ -140,7 +140,7 @@ export class MovieCardComponent implements OnInit {
   addMovieToFavourites(movieID: string, title: string): void {
     this.fetchApiData.addFavourite(this.username!, movieID).subscribe((resp: any) => { 
       this.favourites = resp;
-      this.snackBar.open(`${title} has been added to your favourites!`, 'Cool!', 
+      this.snackBar.open(`${title} has been added to your favourites!`, 'Cool', 
         { duration: 4000, panelClass: 'snack-style' }
       );
     },  (result) => {
@@ -161,7 +161,7 @@ export class MovieCardComponent implements OnInit {
   deleteMovieFromFavourites(movieID: string, title: string): void {
     this.fetchApiData.deleteFavourite(this.username!, movieID).subscribe((resp: any) => { 
       this.favourites = resp;
-      this.snackBar.open(`${title} has been removed from your favourites!`, 'Ok',
+      this.snackBar.open(`${title} has been removed from your favourites`, 'Ok',
         { duration: 4000, panelClass: 'snack-style' }
       );
     },  (result) => {

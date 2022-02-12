@@ -52,7 +52,7 @@ export class EditProfileFormComponent implements OnInit {
       * password will be needed to display an unhashed version in the profile view.
       */ 
      localStorage.setItem('password', this.profileData.Password); 
-     this.snackBar.open('Your details have been updated!', 'Cool!', { duration: 4000, panelClass: 'snack-style' });
+     this.snackBar.open('Your details have been updated!', 'Cool', { duration: 4000, panelClass: 'snack-style' });
      /**
       * The redirectToMovies method forces the page to reopen, so a timeout is set to ensure that the snackbar
       * message has time to be displayed before this takes place.

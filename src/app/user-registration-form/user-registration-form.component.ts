@@ -49,7 +49,7 @@ export class UserRegistrationFormComponent implements OnInit {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => { 
       // Closes the dialog that was opened by the WelcomePageComponent when the register button was clicked
       this.dialogRef.close(); 
-      this.snackBar.open(`Welcome to myFlix ${this.userData.Username}! Log in to start browsing movies.`, 'Cool!', // Message pops up to confirm successful registration
+      this.snackBar.open(`Welcome to myFlix ${this.userData.Username}! Log in to start browsing movies.`, 'Cool', // Message pops up to confirm successful registration
         { duration: 4000, panelClass: 'snack-style' }
       );
     }, (result) => {

@@ -11,9 +11,12 @@ Visit myFlixAngularClient [here](https://penny167.github.io/myFlix-Angular-clien
 - A welcome page invites users to log in to or register for the app. Buttons bring up dialogs for each option with forms for the user to complete. Tooltips display the requirements for the fields on the registration form.
 - A successful login takes registered users to the main view where all the movies from the database connected to the API are displayed. Movies are presented as cards that show the movie title, director and image from the IMDb.
 - Buttons on the cards allow users to explore further details. By clicking on synopsis, director or genre a dialog pops up to display the information.
-- Users can create a collection of favourite movies that they can navigate to from the main page by selecting myFavourites from the navigation menu (on smaller screens this option will be presented as a heart icon in a hamburger menu). Movies are added to or removed from favourites by clicking on a heart icon displayed on each card. Adding a movie to favourites turns the heart icon red.
-- In addition to the main view and favourites view there is a profile view where users can either edit the details they provided at registration or deregister from the application.
-- The application is designed to be responsive and uses Angular Material components to provide an optimised user experience.
+- Users can create a collection of favourite movies that they can navigate to from the main page by selecting myFavourites from the navigation menu (on smaller screens this option is presented as a heart icon on a hamburger menu). Movies are added to or removed from favourites by clicking on a heart icon displayed on each card. Adding a movie to favourites turns the heart icon red.
+- In addition to the main view and favourites view there is a profile view where users can either edit the credentials they provided at registration or deregister from the application.
+- Users navigate the site via a responsive navbar that collapses to a hamburger menu at mobile screen sizes. The navigation component encloses the views available and switches between them based on the user's selection.
+- The application uses Angular Material to provide UI components including the responsive navbar, the cards, buttons, dialogs, snackbars and tooltips.
+- myFlixAngularClient interacts with the database holding the movie and user data using the myFlix API. Requests to the API are made using a service module injected in to the root component that is configured using Angular's HttpClient class.
+- The completed app has been published to github pages and is accessible via the live website link above.
 
 ## Technologies
 - Angular

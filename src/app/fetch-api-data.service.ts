@@ -18,7 +18,7 @@ import { Observable, throwError } from 'rxjs';
 // The Url for the heroku hosted Api to which the http requests are made
 const apiUrl = 'https://intense-depths-38257.herokuapp.com/'; 
 
-// The service is provided to the root app and hence becomes available to all components
+// The service is provided to the root component and hence becomes available to all components
 @Injectable({
   providedIn: 'root' 
 })

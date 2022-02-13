@@ -1,0 +1,63 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>my-flix-angular-client</title><meta name="description" content="Documentation for my-flix-angular-client"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">my-flix-angular-client</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1> my-flix-angular-client</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#myflixangularclient-🎬" id="myflixangularclient-🎬" style="color: inherit; text-decoration: none;">
+  <h1>MyFlixAngularClient 🎬</h1>
+</a>
+<p>MyFlixAngularClient is a dynamic web application that allows movie enthusiasts to explore information about classic films. It consumes the <a href="https://github.com/Penny167/myFlix">myFlix API</a> with a front end built using Angular. The project was generated with the <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 13.0.4 and is written in TypeScript.</p>
+
+<a href="#live-website" id="live-website" style="color: inherit; text-decoration: none;">
+  <h2>Live website</h2>
+</a>
+<p>Visit myFlixAngularClient <a href="https://penny167.github.io/myFlix-Angular-client/welcome">here</a> and sign up to explore the app!</p>
+
+<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
+  <h2>Key Features</h2>
+</a>
+<ul>
+<li>A welcome page invites users to log in to or register for the app. Buttons bring up dialogs for each option with forms for the user to complete. Tooltips display the requirements for the fields on the registration form.</li>
+<li>A successful login takes registered users to the main view where all the movies from the database connected to the API are displayed. Movies are presented as cards that show the movie title, director and image from the IMDb.</li>
+<li>Buttons on the cards allow users to explore further details. By clicking on synopsis, director or genre a dialog pops up to display the information.</li>
+<li>Users can create a collection of favourite movies that they can navigate to from the main page by selecting myFavourites from the navigation menu (on smaller screens this option is presented as a heart icon on a hamburger menu). Movies are added to or removed from favourites by clicking on a heart icon displayed on each card. Adding a movie to favourites turns the heart icon red.</li>
+<li>In addition to the main view and favourites view there is a profile view where users can either edit the credentials they provided at registration or deregister from the application.</li>
+<li>Users navigate the site via a responsive navbar that collapses to a hamburger menu at mobile screen sizes. The navigation component encloses the views available and switches between them based on the user&#39;s selection.</li>
+<li>The application uses Angular Material to provide UI components including the responsive navbar, the cards, buttons, dialogs, snackbars and tooltips.</li>
+<li>myFlixAngularClient interacts with the database holding the movie and user data using the myFlix API. Requests to the API are made using a service module injected in to the root component that is configured using Angular&#39;s HttpClient class.</li>
+<li>The completed app has been published to github pages and is accessible via the live website link above.</li>
+</ul>
+
+<a href="#technologies" id="technologies" style="color: inherit; text-decoration: none;">
+  <h2>Technologies</h2>
+</a>
+<ul>
+<li>Angular</li>
+<li>Angular Material</li>
+</ul>
+
+<a href="#installation-and-set-up" id="installation-and-set-up" style="color: inherit; text-decoration: none;">
+  <h2>Installation and set up</h2>
+</a>
+<p>This project requires npm in order to install package dependencies. npm is installed automatically when installing node.js. The relevant documentation can be found <a href="https://nodejs.org/en/">here</a>.
+Once npm is installed, install the project dependencies by running: </p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span>
+</code></pre>
+<p>Next you need to install the Angular CLI:</p>
+<pre><code><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-0">install</span><span class="hl-1"> -</span><span class="hl-0">g</span><span class="hl-1"> @</span><span class="hl-0">angular</span><span class="hl-1">/</span><span class="hl-0">cli</span>
+</code></pre>
+<p>You will now be able to run CLI commands inside the project. To start the project locally using a dev server run:</p>
+<pre><code><span class="hl-0">ng</span><span class="hl-1"> </span><span class="hl-0">serve</span><span class="hl-1"> </span>
+</code></pre>
+<p>Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
+<p>You can build the project and publish to your own github pages website by creating a github repository then using angular-cli-ghpages (which is installed as a project dependency) to deploy to a github pages branch. Ensure any changes are pushed to your main branch, checkout a gh-pages branch, merge your main branch into the gh-pages branch and push the changes. Then run the command:</p>
+<pre><code><span class="hl-0">ng</span><span class="hl-1"> </span><span class="hl-0">deploy</span><span class="hl-1"> --</span><span class="hl-0">base</span><span class="hl-1">-</span><span class="hl-0">href</span><span class="hl-1">=</span><span class="hl-2">/&lt;your-repository-name&gt;/</span>
+</code></pre>
+<p>Your live app will now be published at the github pages URL!</p>
+
+<a href="#further-help" id="further-help" style="color: inherit; text-decoration: none;">
+  <h2>Further help</h2>
+</a>
+<p>To get more help on the Angular CLI use <code>ng help</code> or check out the <a href="https://angular.io/cli">Angular CLI Overview and Command Reference</a> page.</p>
+
+<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+  <h2>Author</h2>
+</a>
+<p>Github: <a href="https://github.com/Penny167">@penny167</a></p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Modules</a></li><li class=" tsd-kind-module"><a href="modules/AppComponent.html">App<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/AppModule.html">App<wbr/>Module</a></li><li class=" tsd-kind-module"><a href="modules/AppRoutingModule.html">App<wbr/>Routing<wbr/>Module</a></li><li class=" tsd-kind-module"><a href="modules/DirectorComponent.html">Director<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/EditProfileFormComponent.html">Edit<wbr/>Profile<wbr/>Form<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/FavouritesComponent.html">Favourites<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/FetchApiDataService.html">Fetch<wbr/>Api<wbr/>Data<wbr/>Service</a></li><li class=" tsd-kind-module"><a href="modules/GenreComponent.html">Genre<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/MovieCardComponent.html">Movie<wbr/>Card<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/NavigationComponent.html">Navigation<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/ProfileComponent.html">Profile<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/SynopsisComponent.html">Synopsis<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/UserLoginFormComponent.html">User<wbr/>Login<wbr/>Form<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/UserRegistrationFormComponent.html">User<wbr/>Registration<wbr/>Form<wbr/>Component</a></li><li class=" tsd-kind-module"><a href="modules/WelcomePageComponent.html">Welcome<wbr/>Page<wbr/>Component</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
